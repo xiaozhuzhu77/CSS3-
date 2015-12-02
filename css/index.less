@@ -2,16 +2,18 @@
     padding: 0;
     margin: 0;
 }
-
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
-
+}
+body {
+    background: url(img/wiese.jpg) no-repeat;
+    background-size: 100% 100%;
 }
 #container {
     width: 849px;
     height: 566px;
-    background: url(img/wiese.jpg) no-repeat;
     perspective: 1200px;
     perspective-origin: 0% 0%;
     color: white;
@@ -26,11 +28,12 @@ html, body {
     height: 208px;
     transform-style: preserve-3d;
     animation-name: butterflyani;
-    animation-duration: 50s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
-#leftwing, #rightwing {
+#leftwing,
+#rightwing {
     position: absolute;
     top: 0;
     width: 178px;
@@ -42,7 +45,7 @@ html, body {
     transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
     transform-origin: top right;
     animation-name: leftwingani;
-    animation-duration: 2s;
+    animation-duration: 0.2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -52,11 +55,11 @@ html, body {
     transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
     transform-origin: top right;
     animation-name: rightwingani;
-    animation-duration: 2s;
+    animation-duration: 0.2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-@-webkit-keyframes  butterflyani {
+@-webkit-keyframes butterflyani {
     from {
         transform: rotate3d(0, 1, 0, 0deg) scale3d(0.5, 0.5, 0.5) translate3d(-300px, 350px, 0px);
     }
@@ -69,32 +72,29 @@ html, body {
     75% {
         transform: rotate3d(0, 1, 0, -270deg) scale3d(0.5, 0.5, 0.5) translate3d(-300px, 350px, 0px);
     }
-    to{
+    to {
         transform: rotate3d(0, 1, 0, -360deg) scale3d(0.5, 0.5, 0.5) translate3d(-300px, 350px, 0px);
     }
 }
-
-@-webkit-keyframes  rightwingani {
+@-webkit-keyframes rightwingani {
     from {
-        transform:rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+        transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
     }
     50% {
-        transform:rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 100deg);
+        transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 100deg);
     }
     to {
-        transform:rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+        transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
     }
-
 }
-
 @-webkit-keyframes leftwingani {
     from {
-        -webkit-transform:rotateX(90deg) rotate3d(0, 1, 0, 0deg);
+        -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
     }
     50% {
-        -webkit-transform:rotateX(90deg) rotate3d(0, 1, 0, 80deg);
+        -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 80deg);
     }
-    to{
-        -webkit-transform:rotateX(90deg) rotate3d(0, 1, 0, 00deg);
+    to {
+        -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
     }
 }
