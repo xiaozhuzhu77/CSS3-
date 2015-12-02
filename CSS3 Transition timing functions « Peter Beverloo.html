@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://peter.sh/experiments/css3-transition-timing-functions/ -->
+<html lang="en" class="hb-loaded"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8"> 
+    <title>CSS3 Transition timing functions «  Peter Beverloo</title>
+    <link rel="stylesheet" href="http://peter.sh/style/peter.css?20100801" media="all">
+    <link rel="stylesheet" href="http://peter.sh/style/examples.css?20100709-5" media="all">
+    <link rel="stylesheet" href="http://peter.sh/style/weblog.css?20110206" media="all"> 
+    <link rel="alternate" type="application/rss+xml" href="http://peter.sh/feed/">
+    <link rel="pingback" href="http://peter.sh/xmlrpc.php">
+    <!--[if lt IE 9]>
+      <script src="/javascript/compat.html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="page page-id-3189 page-child parent-pageid-236 page-template page-template-examples-php" huaban_collector_injected="true">
+    <div id="shading"></div>
+    <div id="container">
+      
+      <section id="content">
+        <section id="page-examples" class="content-rounded">
+          <!-- begin of the example/test -->
+          <header>
+            <h1>CSS3 Transition Timing Functions</h1>
+           
+          </header>
+    <style scoped="">
+      table   { border-collapse: collapse; width: 330px; }
+      #transition-table th, #transition-table td  { border: 1px solid #eee; padding: 3px 4px; text-align: left; }
+      #transition-table td span { margin: 1px; display: block; }
+      #transition-table a       { color: #4A7500; text-decoration: none; display: block; }
+      a img   { border: 0px; }
+      #transition-table a:hover { color: #3f6300; text-decoration: underline; }
+      
+      tr.selected td:last-child { background: #f0ffcc url(/wp-content/themes/default/examples/css/arrow.png) no-repeat 235px 7px; }
+      
+      span.green  { background-color: #4A7500; }
+      span.orange { background-color: #FF6600; }
+      span.blue   { background-color: #0000FF; }
+      
+      #animation-controls {
+        position: absolute;
+        margin: -17px 0 0 317px;
+        width: 35px; color: #999;
+        
+        text-align: right;
+        font-weight: bold;
+        font-variant: small-caps;
+        font-size: 11px;
+        
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        cursor: pointer;
+      }
+      
+      #transition-table { width:  340px; float: left; }
+      #transition-graph { height: 206px; margin-left: 340px; }
+      
+      .transition {
+        -webkit-transition-duration: 5s;
+        -moz-transition-duration: 5s;
+        -ms-transition-duration: 5s;
+        -o-transition-duration: 5s;
+        transition-duration: 5s;
+        
+        -webkit-transition-property: background-color;
+        -moz-transition-property: background-color;
+        -ms-transition-property: background-color;
+        -o-transition-property: background-color;
+        transition-property: background-color;
+      }
+      
+      /** The separate timing functions, in all css flavors **/
+      #ease-css {
+        -webkit-transition-timing-function: ease;
+        -moz-transition-timing-function: ease;
+        -ms-transition-timing-function: ease;
+        -o-transition-timing-function: ease;
+        transition-timing-function: ease;
+        background-color: #4A7500;
+      }
+      
+      #linear-css {
+        -webkit-transition-timing-function: linear;
+        -moz-transition-timing-function: linear;
+        -ms-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+        transition-timing-function: linear;
+        background-color: #FF6600;
+      }
+      
+      #ease-in-css {
+        -webkit-transition-timing-function: ease-in;
+        -moz-transition-timing-function: ease-in;
+        -ms-transition-timing-function: ease-in;
+        -o-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+        background-color: #0000FF;
+      }
+      
+      #ease-out-css {
+        -webkit-transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -ms-transition-timing-function: ease-out;
+        -o-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        background-color: #4A7500;
+      }
+      
+      #ease-in-out-css {
+        -webkit-transition-timing-function: ease-in-out;
+        -moz-transition-timing-function: ease-in-out;
+        -ms-transition-timing-function: ease-in-out;
+        -o-transition-timing-function: ease-in-out;
+        transition-timing-function: ease-in-out;
+        background-color: #FF6600;
+      }
+      
+      #cubic-bezier-css {
+        -webkit-transition-timing-function: cubic-bezier(0.85, 0.0, 1.0, 1.0);
+        -moz-transition-timing-function: cubic-bezier(0.85, 0.0, 1.0, 1.0);
+        -ms-transition-timing-function: cubic-bezier(0.85, 0.0, 1.0, 1.0);
+        -o-transition-timing-function: cubic-bezier(0.85, 0.0, 1.0, 1.0);
+        transition-timing-function: cubic-bezier(0.85, 0.0, 1.0, 1.0);
+        background-color: #0000FF;
+      }
+      
+      #steps-css {
+        -webkit-transition-timing-function: steps(4, start);
+        -moz-transition-timing-function: steps(4, start);
+        -ms-transition-timing-function: steps(4, start);
+        -o-transition-timing-function: steps(4, start);
+        transition-timing-function: steps(4, start);
+        background-color: #4A7500;
+      }
+      
+      #steps2-css {
+        -webkit-transition-timing-function: steps(7, end);
+        -moz-transition-timing-function: steps(7, end);
+        -ms-transition-timing-function: steps(7, end);
+        -o-transition-timing-function: steps(7, end);
+        transition-timing-function: steps(7, end);
+        background-color: #FF6600;
+      }
+    </style>
+    <div id="transition-table">
+      <table cellspacing="0">
+        <thead>
+          <tr>
+            <th style="width: 30px;">JS</th>
+            <th style="width: 30px;">CSS</th>
+            <th>Timing function</th>
+          </tr>
+        </thead>
+        <tbody id="timing-functions">
+          <tr class="">
+            <td><span class="green" id="ease-javascript" style="background-color: rgb(239, 243, 232);">&nbsp;</span></td>
+            <td><span class="transition" id="ease-css" style="background-color: white;">&nbsp;</span></td>
+            <td><a href="http://peter.sh/experiments/css3-transition-timing-functions/#" id="ease-start">ease</a></td>
+          </tr>
+          <tr class="">
+            <td><span class="orange" id="linear-javascript" style="background-color: rgb(255, 200, 164);">&nbsp;</span></td>
+            <td><span class="transition" id="linear-css" style="background-color: white;">&nbsp;</span></td>
+            <td><a href="http://peter.sh/experiments/css3-transition-timing-functions/#" id="linear-start">linear</a></td>
+          </tr>
+          <tr class="">
+            <td><span class="blue" id="ease-in-javascript" style="background-color: rgb(122, 122, 255);">&nbsp;</span></td>
+            <td><span class="transition" id="ease-in-css" style="background-color: white;">&nbsp;</span></td>
+            <td><a href="http://peter.sh/experiments/css3-transition-timing-functions/#" id="ease-in-start">ease-in</a></td>
+          </tr>
+          <tr class="">
+            <td><span class="green" id="ease-out-javascript" style="background-color: rgb(222, 230, 209);">&nbsp;</span></td>
+            <td><span class="transition" id="ease-out-css" style="background-color: white;">&nbsp;</span></td>
+            <td><a href="http://peter.sh/experiments/css3-transition-timing-functions/#" id="ease-out-start">ease-out</a></td>
+          </tr>
+          <tr class="">
+            <td><span class="orange" id="ease-in-out-javascript" style="background-color: rgb(255, 213, 185);">&nbsp;</span></td>
+            <td><span class="transition" id="ease-in-out-css" style="background-color: white;">&nbsp;</span></td>
+            <td><a href="http://peter.sh/experiments/css3-transition-timing-functions/#" id="ease-in-out-start">ease-in-out</a></td>
+          </tr>
+          <tr class="">
+            <td><span class="blue" id="cubic-bezier-javascript" style="background-color: rgb(65, 65, 255);">&nbsp;</span></td>
+            <td><span class="transition" id="cubic-bezier-css" style="background-color: white;">&nbsp;</span></td>
+            <td><a href="http://peter.sh/experiments/css3-transition-timing-functions/#" id="cubic-bezier-start">cubic-bezier (0.85, 0.00, 1.00, 1.00)</a></td>
+          </tr>
+          <tr class="">
+            <td><span class="green" id="steps-javascript" style="background-color: rgb(209, 220, 191);">&nbsp;</span></td>
+            <td><span class="transition" id="steps-css" style="background-color: white;">&nbsp;</span></td>
+            <td><a href="http://peter.sh/experiments/css3-transition-timing-functions/#" id="steps-start">steps (4, start)</a></td>
+          </tr>
+          <tr class="selected">
+            <td><span class="orange" id="steps2-javascript" style="background-color: rgb(255, 189, 145);">&nbsp;</span></td>
+            <td><span class="transition" id="steps2-css" style="background-color: white;">&nbsp;</span></td>
+            <td><a href="http://peter.sh/experiments/css3-transition-timing-functions/#" id="steps2-start">steps (7, end)</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="transition-graph">
+      <canvas id="transition-canvas" width="357" height="206">
+        <a href="http://www.google.com/chrome">
+          <img src="./CSS3 Transition timing functions « Peter Beverloo_files/transition-timing-function-no-canvas.jpg" alt="Your browser does not support the HTML5 Canvas 
+Element. Click to download Google Chrome">
+        </a>
+      </canvas>
+    <div id="animation-controls">pause</div></div>
+    <script async="" src="./CSS3 Transition timing functions « Peter Beverloo_files/ga.js"></script><script src="./CSS3 Transition timing functions « Peter Beverloo_files/jquery.min.js"></script> 
+    <script src="./CSS3 Transition timing functions « Peter Beverloo_files/jquery-ui.min.js"></script> 
+    <script>
+      /**
+       * This method has been made by Christian Effenberger, great work!
+       *
+       * A Cubic Bezier timing function compatible with
+       * -webkit-transition-timing-function
+       *
+       * @author Christian Effenberger
+       * @see http://www.netzgesta.de/dev/cubic-bezier-timing-function.html
+       */
+      
+      function cubicBezierAtTime (t,p1x,p1y,p2x,p2y,duration)
+      {
+          var ax=0,bx=0,cx=0,ay=0,by=0,cy=0;
+          // `ax t^3 + bx t^2 + cx t' expanded using Horner's rule.
+
+          function sampleCurveX(t) {return ((ax*t+bx)*t+cx)*t;};
+          function sampleCurveY(t) {return ((ay*t+by)*t+cy)*t;};
+          function sampleCurveDerivativeX(t) {return (3.0*ax*t+2.0*bx)*t+cx;};
+          // The epsilon value to pass given that the animation is going to run over |dur| seconds. The longer the
+
+          // animation, the more precision is needed in the timing function result to avoid ugly discontinuities.
+          function solveEpsilon(duration) {return 1.0/(200.0*duration);};
+          function solve(x,epsilon) {return sampleCurveY(solveCurveX(x,epsilon));};
+         
+          // Given an x value, find a parametric value it came from.
+          function solveCurveX(x,epsilon) {
+              var t0,t1,t2,x2,d2,i;
+             
+              function fabs(n) {if(n>=0) {return n;}else {return 0-n;}}; 
+           
+              // First try a few iterations of Newton's method -- normally very fast.
+              for(t2=x, i=0; i<8; i++) {x2=sampleCurveX(t2)-x; if(fabs(x2)<epsilon) {return t2;} d2=sampleCurveDerivativeX(t2); if(fabs(d2)<1e-6) {break;} t2=t2-x2/d2;}
+              
+              // Fall back to the bisection method for reliability.
+              t0=0.0; t1=1.0; t2=x; if(t2<t0) {return t0;} if(t2>t1) {return t1;}
+              while(t0<t1) {x2=sampleCurveX(t2); if(fabs(x2-x)<epsilon) {return t2;} if(x>x2) {t0=t2;}else {t1=t2;} t2=(t1-t0)*.5+t0;}
+           
+              return t2; // Failure.
+          };
+          
+          // Calculate the polynomial coefficients, implicit first and last control points are (0,0) and (1,1).
+          cx=3.0*p1x; bx=3.0*(p2x-p1x)-cx; ax=1.0-cx-bx; cy=3.0*p1y; by=3.0*(p2y-p1y)-cy; ay=1.0-cy-by;
+          
+          // Convert from input time to parametric value in curve, then from that to output time.
+          return solve(t, solveEpsilon(duration));
+      };
+      
+      function cubicBezierAtPosition (t,P1x,P1y,P2x,P2y)
+      {
+          var x,y,k=((1-t)*(1-t)*(1-t));
+          x=P1x*(3*t*t*(1-t))+P2x*(3*t*(1-t)*(1-t))+k;
+          y=P1y*(3*t*t*(1-t))+P2y*(3*t*(1-t)*(1-t))+k;
+          
+          return {x:Math.abs(x),y:Math.abs(y)};
+      };
+
+      /**
+       * Add all CSS defined transition types. These use the timing functions
+       * as they're defined in the specification.
+       *
+       * A rather dirty global variable to share our position.
+       * 
+       * @author Peter Beverloo
+       * @see http://www.w3.org/TR/css3-transitions/
+       */
+      
+      var _transitionProcess   = 0,
+          _transitionBackwards = false;
+      
+      jQuery.extend (jQuery.easing,
+      {
+          cssEase: function (x, currentTime, initialValue, delta, duration) {
+              return cubicBezierAtTime (currentTime / duration, 0.25, 0.10, 0.25, 1.00, duration);
+          },
+          
+          cssLinear: function (x, currentTime, initialValue, delta, duration) {
+              return cubicBezierAtTime (currentTime / duration, 0.00, 0.00, 1.00, 1.00, duration);
+	  },
+          
+          cssEaseIn: function (x, currentTime, initialValue, delta, duration) {
+              return cubicBezierAtTime (currentTime / duration, 0.42, 0.00, 1.00, 1.00, duration);
+          },
+          
+          cssEaseOut: function (x, currentTime, initialValue, delta, duration) {
+              return cubicBezierAtTime (currentTime / duration, 0.00, 0.00, 0.58, 1.00, duration);
+          },
+          
+          cssEaseInOut: function (x, currentTime, initialValue, delta, duration) {
+              return cubicBezierAtTime (currentTime / duration, 0.42, 0.00, 0.58, 1.00, duration);
+          },
+          
+          cssCubicBezier: function (x, currentTime, initialValue, delta, duration) {
+              return cubicBezierAtTime (currentTime / duration, 0.85, 0.00, 1.00, 1.00, duration);
+          },
+          
+          cssSteps: function (x, currentTime, initialValue, delta, duration) {
+              var currentProcess = currentTime / duration;
+              
+              if (currentProcess > 0.75) return 1;
+              else if (currentProcess > 0.50) return 0.75;
+              else if (currentProcess > 0.25) return 0.50;
+              else if (currentProcess > 0.00) return 0.25;
+              
+              return 0;
+          },
+          
+          cssSteps2: function (x, currentTime, initialValue, delta, duration) {
+              var currentProcess = currentTime / duration;
+              if (x != Math.PI) {
+                  _transitionProcess = _transitionBackwards ? currentProcess : 1 - currentProcess;
+              }
+              
+              if (currentProcess < 0.143) return 0;
+              else if (currentProcess < 0.286) return 0.143;
+              else if (currentProcess < 0.426) return 0.286;
+              else if (currentProcess < 0.571) return 0.426;
+              else if (currentProcess < 0.714) return 0.571;
+              else if (currentProcess < 0.857) return 0.714;
+              else if (currentProcess < 0.990) return 0.857;
+              
+              return 1.00;
+          }
+      
+      });
+    </script>
+    <script>
+    (function ()
+    {
+      var table    = document.getElementById ('timing-functions');
+      var examples = [
+      //   CSS/Layer Name   | jQuery name      | color    | Bezier coordinates
+         ['ease',             'cssEase',        '#4A7500', [0.25, 0.10, 0.25, 1.00]],
+         ['linear',           'cssLinear',      '#FF6600', [0.00, 0.00, 1.00, 1.00]],
+         ['ease-in',          'cssEaseIn',      '#0000FF', [0.42, 0.00, 1.00, 1.00]],
+         ['ease-out',         'cssEaseOut',     '#4A7500', [0.00, 0.00, 0.58, 1.00]],
+         ['ease-in-out',      'cssEaseInOut',   '#FF6600', [0.42, 0.00, 0.58, 1.00]],
+         ['cubic-bezier',     'cssCubicBezier', '#0000FF', [0.85, 0.00, 1.00, 1.00]],
+         ['steps',            'cssSteps',       '#4A7500', false],
+         ['steps2',           'cssSteps2',      '#FF6600', false]
+      ];
+      
+      var selected = 0;
+      var paused   = false;
+      
+      for (var i = 0, j = examples.length; i < j; i++)
+      {
+          $ ('#' + examples [i][0] + '-javascript').animate ({ 'background-color': 'white' }, { duration: 5000, easing: examples [i][1] });
+          document.getElementById (examples [i][0] + '-css').style.backgroundColor = "white";
+          
+          $ ('#' + examples [i][0] + '-start').click (function ()
+          {
+              selected = $ (this.parentNode.parentNode).index ();
+              
+              $ ('tr.selected', table).removeClass ('selected');
+              $ ('tr:eq(' + selected + ')', table).addClass ('selected');
+              
+              return false;
+              
+          });
+      }
+      
+      var toggleInterval = setInterval (function ()
+      {
+          if (paused) return ;
+          
+          _transitionBackwards = !_transitionBackwards;
+          for (var i = 0, j = examples.length; i < j; i++)
+          {
+              $ ('#' + examples [i][0] + '-javascript').animate ({ 'background-color':   _transitionBackwards ? examples[i][2] : "white" }, { duration: 5000, easing: examples [i][1] });
+              document.getElementById (examples [i][0] + '-css').style.backgroundColor = _transitionBackwards ? examples[i][2] : "white";
+          }
+          
+      }, 5500);
+      
+      /**
+       * With that the animations are complete, now we want to render a canvas
+       * object with the path this animation will be following.
+       */
+      
+      var canvas = document.getElementById ('transition-canvas');
+      if (canvas.getContext)
+      {
+          var context = canvas.getContext ('2d');
+          var drawCanvas = function ()
+          {
+              if (paused) /** paused? Skip this call and just check again later **/
+              {
+                  setTimeout (function () { drawCanvas (); }, 150);
+                  return ;
+              }
+              
+              /**
+               * First we create the general appearance - the grid, axis and
+               * the background colors which will be used.
+               */
+              
+              var backgroundGradient = context.createLinearGradient (0, 0, 1, canvas.height);
+              backgroundGradient.addColorStop (0, "#ffffff");
+              backgroundGradient.addColorStop (1, "#f5f5f5");
+              
+              context.save ();
+              
+              context.fillStyle   = backgroundGradient;
+              context.strokeStyle = "#eee";
+              
+              context.strokeRect (.5, .5, canvas.width - 1, canvas.height - 1);
+              context.fillRect   (.5, .5, canvas.width - 1, canvas.height - 1);
+              
+              context.fillStyle = "white";
+              context.fillRect (25.5, 8, 180, 180);
+              
+              context.strokeStyle = "#eee";
+              for (var i = 0; i < 11; i++)
+              {
+                  context.beginPath ();
+                  context.moveTo (25.5 + (i * 18), 8);
+                  context.lineTo (25.5 + (i * 18), 188);
+                  context.stroke ();
+                  
+                  context.beginPath ();
+                  context.moveTo (25.5, (i * 18) + 8.5);
+                  context.lineTo (205.5,  (i * 18) + 8.5);
+                  context.stroke ();
+              }
+              
+              context.beginPath ();
+              context.moveTo (281.5, 7);
+              context.lineTo (281.5, 187);
+              context.stroke ();
+              
+              context.font      = "bold 11px Arial";
+              context.fillStyle = "black";
+              context.fillText   ("position →", 146, 200);
+              
+              context.save ();
+              context.rotate (4.7124);
+              context.fillText ("time →", -48, 19);
+              context.restore ();
+              
+              /**
+               * Next we fill in the time percentages. These are used to see
+               * at which timeframe (total = 5 seconds) the transition is at
+               * which percentage of completion.
+               */
+              
+              context.fillText ("Time (s)",     230, 16);
+              context.fillText ("Position",     288, 16);
+              
+              context.font = "11px Arial";
+              context.textAlign = "right";
+              
+              var exampleInfo  = examples [selected];
+              var processCache = [];
+              
+              for (var process = 0; process < 11; process ++)
+              {
+                  processCache [process] = jQuery.easing [exampleInfo [1]] (Math.PI, process / 10, 0, 0, 1);
+                  
+                  context.fillText ((process * .5).toFixed (3), 275, 33 + (process * 15));
+                  context.fillText (Math.round ((processCache [process]) * 100) + "%", 332, 33 + (process * 15));
+              }
+              
+              /**
+               * Great! Now draw the line in the chart itself. Even though we
+               * only supply ten points to the chart, the canvas api can make
+               * it smooth. This aren't scientific charts anyway.
+               */
+              
+              context.beginPath ();
+              context.fillStyle = "#339900";
+              context.strokeStyle = "#aaa";
+              context.lineWidth = 1.8;
+              
+              var x = 25.5, y = 188;
+              context.moveTo (x, y);
+              
+              if (exampleInfo [3] === false)
+              {
+                  context.moveTo (x, y = 185);
+                  for (var process = 0; process < 101; process++)
+                  {
+                      var position    = jQuery.easing [exampleInfo [1]] (Math.PI, (_transitionBackwards ? (100 - process) : process) / 100, 0, 0, 1),
+                          coordinateX = _transitionBackwards ? 25.5 + (1 - position) * 180 : 25.5 + (position * 180);
+                      
+                      if (coordinateX != x)
+                      {
+                          context.lineTo (x, 188 - (process * 1.8));
+                          context.lineTo (coordinateX, 188 - (process * 1.8));
+                          
+                          x = coordinateX;
+                          y = 188 - (process * 1.8);
+                      }
+                  }
+                  
+                  context.lineTo (205.5, 9);
+              }
+              else // continious timing function
+              {
+                  context.bezierCurveTo (25.5 + exampleInfo [3][0] * 180, 188 - exampleInfo [3][1] * 180, 25.5 + exampleInfo [3][2] * 180, 188 - exampleInfo [3][3] * 180, 205.5, 8);
+              }
+              
+              context.stroke ();
+              
+              /**
+               * Last thing we have to do is draw a small circle at the current
+               * position of the animation, showing the user where we are.
+               */
+              
+              if (exampleInfo [3] === false) // step-based timing function
+              {
+                  var position = jQuery.easing [exampleInfo [1]] (Math.PI, _transitionBackwards ? _transitionProcess : 1 - _transitionProcess, 0, 0, 1);
+                  var circlePosition = { x : _transitionBackwards ? 1 - position : position, y:  1 - _transitionProcess };
+              }
+              else // continious timing function
+              {
+                  var circlePosition = cubicBezierAtPosition (_transitionProcess, exampleInfo [3][0], exampleInfo [3][1], exampleInfo [3][2], exampleInfo [3][3]);
+              }
+              
+              context.beginPath ();
+              context.arc (25.5 + (circlePosition.x * 180), 188 - (circlePosition.y * 180) - 0.5, 5, 0, Math.PI * 2, true);
+              context.fill ();
+              
+              /**
+               * Restore the context' properties and render another frame in
+               * 50 milliseconds, so we'll be getting an animation.
+               */
+              
+              setTimeout (function () { drawCanvas (); }, 50);
+              context.restore ();
+          }
+          
+          drawCanvas ();
+      }
+      
+      /**
+       * Add a pause/play control, as the animation isn't always convenient. If
+       * the visitor is reading, it might be asking for their attention.
+       */
+      
+      $ ('#transition-graph').append ('<div id="animation-controls">pause</div>');
+      $ ('#animation-controls').click (function ()
+      {
+          if ($ (this).text () == 'pause')
+          {
+              $ (this).text ('play');
+              paused = true;
+          }
+          else
+          {
+              $ (this).text ('pause');
+              paused = false;
+          }
+      
+      });
+      
+    })();
+    </script>
+    
+ 
+          <!-- end of the example/test -->
+        </section>
+      </section>
+     
+        </section>
+        
+   </div>
+    <script src="./CSS3 Transition timing functions « Peter Beverloo_files/weblog.js" async=""></script>
+    <script>
+      var _gaq = [['_setAccount', 'UA-4974835-4'], ['_trackPageview']];
+      (function(d, t) {
+       var g = d.createElement(t),
+           s = d.getElementsByTagName(t)[0];
+       g.async = true;
+       g.src = '//www.google-analytics.com/ga.js';
+       s.parentNode.insertBefore(g, s);
+      })(document, 'script');
+  </script>
+  
+<</div></div></div></body></html>
