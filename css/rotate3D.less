@@ -1,0 +1,87 @@
+@import "common";
+figure .container {
+    width: 105%;
+    height: 100px;
+    margin: 0 0 24px 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -ms-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    background-color: rgba(255,255,255,.7);
+    border: none;
+}
+figure div {
+    float: left;
+    width: 12%;
+    height: 50px;
+    margin: 25px 0 0 1.5%;
+    border: 3px solid #000;
+    border-radius: .5em;
+    background-color: #ddd;
+    text-align: center;
+}
+figure:hover .rotate {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+figure:hover .rotatex {
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+figure:hover .rotatey {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+figure:hover .rotatez {
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    -ms-transform: rotateZ(180deg);
+    -o-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+figure:hover .rotate3d-x {
+    -webkit-transform: rotate3d(1,0,0,180deg);
+    -moz-transform: rotate3d(1,0,0,180deg);
+    -ms-transform: rotate3d(1,0,0,180deg);
+    -o-transform: rotate3d(1,0,0,180deg);
+    transform: rotate3d(1,0,0,180deg);
+}
+figure:hover .rotate3d-y {
+    -webkit-transform: rotate3d(0,1,0,180deg);
+    -moz-transform: rotate3d(0,1,0,180deg);
+    -ms-transform: rotate3d(0,1,0,180deg);
+    -o-transform: rotate3d(0,1,0,180deg);
+    transform: rotate3d(0,1,0,180deg);
+}
+figure:hover .rotate3d-z {
+    -webkit-transform: rotate3d(0,0,1,180deg);
+    -moz-transform: rotate3d(0,0,1,180deg);
+    -ms-transform: rotate3d(0,0,1,180deg);
+    -o-transform: rotate3d(0,0,1,180deg);
+    transform: rotate3d(0,0,1,180deg);
+}
+figure .rotatex,
+figure .rotatey,
+figure .rotatez {
+    background-color: #bcd;
+}
+figure .rotate3d-x,
+figure .rotate3d-y,
+figure .rotate3d-z {
+    background-color: #9ab;
+}

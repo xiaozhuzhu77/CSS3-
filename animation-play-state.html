@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>animation-play-state</title>
+    <link href="css/animation-play-state.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>animation-play-state </h1>
+
+<figure id="a-play-state">
+<pre class="callout"><code>:hover .box {
+        animation-name: runner;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    <mark>.box:hover {animation-play-state: paused;}</mark>
+</code></pre>
+    <div><code>:hover</code> me to pause</div>
+    <figcaption></figcaption>
+</figure>
+</body>
+</html>

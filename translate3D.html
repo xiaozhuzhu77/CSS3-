@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>transform:translate (3D)</title>
+    <link href="css/translate3D.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<h1>transform: translate in 3D</h1>
+
+<figure id="translate3d">
+<pre class="callout">
+    <code>
+        translateZ(tZ);
+        translate3D(tX, tY, tZ);
+
+
+        .outer-box {perspective: 800px; transform-style: preserve-3d;}
+
+        .inner-box {transform: translate3d(0,50px,-50px);}
+
+        :hover .outer-box {transform: translate3d(280%,0,0);}
+
+        :hover .inner-box {transform: translate3d(100%,0,200px);}
+    </code>
+</pre>
+    <div>
+        <span></span>
+    </div>
+</figure>
+</body>
+</html>

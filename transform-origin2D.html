@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>2D transform-origin</title>
+    <link href="css/tranform-origin2D.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>2D transform-origin</h1>
+
+<figure id="transform-origin-rotate" class="web-only">
+<pre class="callout"><code>
+    .top-left {transform-origin: left top;   /* 0 0 */}
+
+    .bottom-left {transform-origin: left bottom;   /* 0 100% */}
+
+    .top-right {transform-origin: right top;   /* 100% 0 */}
+
+    .bottom-right {transform-origin: right bottom;   /* 100% 100% */}
+</code></pre>
+    <div class="left-top">
+        <span></span>
+        <p>↑ top left</p>
+    </div>
+    <div class="left-bottom">
+        <span></span>
+        <p>↑ bottom left</p>
+    </div>
+    <div class="right-top">
+        <span></span>
+        <p>↑ top right</p>
+    </div>
+    <div class="right-bottom">
+        <span></span>
+        <p>↑ bottom right</p>
+    </div>
+</figure>
+</body>
+</html>

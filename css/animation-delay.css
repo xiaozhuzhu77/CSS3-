@@ -1,0 +1,92 @@
+body {
+  width: 80%;
+  max-width: 42em;
+  margin: auto;
+  font: bold 21px Georgia, serif;
+}
+h1 {
+  font-weight: normal;
+}
+pre {
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+figure div,
+figure span {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+figure .relative {
+  position: relative;
+}
+figure .box {
+  position: absolute;
+  top: 2.66em;
+  width: 20%;
+  margin: 0 0 .5em;
+  border: 3px solid #000;
+  border-radius: .5em;
+  padding: .33em;
+  background: #fff;
+  text-align: center;
+}
+figure .positive {
+  top: 0;
+}
+figure .negative {
+  top: 5.32em;
+}
+figure:hover .box {
+  -webkit-animation-name: moveit;
+  -moz-animation-name: moveit;
+  -ms-animation-name: moveit;
+  -o-animation-name: moveit;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -ms-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+}
+figure:hover .positive {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+  -o-animation-delay: 1s;
+}
+figure:hover .negative {
+  -webkit-animation-delay: -1s;
+  -moz-animation-delay: -1s;
+  -ms-animation-delay: -1s;
+  -o-animation-delay: -1s;
+}
+@-webkit-keyframes moveit {
+  to {
+    left: 100%;
+  }
+}
+@-moz-keyframes moveit {
+  to {
+    left: 100%;
+  }
+}
+@-ms-keyframes moveit {
+  to {
+    left: 100%;
+  }
+}
+@-o-keyframes moveit {
+  to {
+    left: 100%;
+  }
+}

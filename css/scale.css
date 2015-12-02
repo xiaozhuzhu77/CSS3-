@@ -1,0 +1,80 @@
+body {
+  width: 80%;
+  max-width: 42em;
+  margin: auto;
+  font: bold 21px Georgia, serif;
+}
+h1 {
+  font-weight: normal;
+}
+pre {
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+figure div,
+figure span {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+figure div {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin-right: 8%;
+  border: 3px solid #000;
+  border-radius: .5em;
+  background: #fff;
+}
+figure span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 22px 0 0 22px;
+  border: 3px solid #555;
+  border-top: 3px solid #398A00;
+  border-left: 3px solid #255600;
+  border-radius: .5em;
+  background: #ddd;
+  -moz-opacity: .8;
+  opacity: .8;
+}
+figure:hover .one {
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+}
+figure:hover .one span {
+  -webkit-transform: scale(-3);
+  -moz-transform: scale(-3);
+  -ms-transform: scale(-3);
+  -o-transform: scale(-3);
+  transform: scale(-3);
+}
+figure:hover .two {
+  -webkit-transform: scale(0.75, 1);
+  -moz-transform: scale(0.75, 1);
+  -ms-transform: scale(0.75, 1);
+  -o-transform: scale(0.75, 1);
+  transform: scale(0.75, 1);
+}
+figure:hover .two span {
+  -webkit-transform: scale(-3, -1.5);
+  -moz-transform: scale(-3, -1.5);
+  -ms-transform: scale(-3, -1.5);
+  -o-transform: scale(-3, -1.5);
+  transform: scale(-3, -1.5);
+}
+figcaption {
+  clear: left;
+  padding-top: 3em;
+}

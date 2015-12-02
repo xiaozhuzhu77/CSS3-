@@ -1,0 +1,91 @@
+body {
+  width: 80%;
+  max-width: 42em;
+  margin: auto;
+  font: bold 21px Georgia, serif;
+}
+h1 {
+  font-weight: normal;
+}
+pre {
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+figure div,
+figure span {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.relative {
+  position: relative;
+}
+.box {
+  position: absolute;
+  width: 20%;
+  margin: 0 0 .5em;
+  border: 3px solid #000;
+  border-radius: .5em;
+  padding: .33em;
+  background: #fff;
+  text-align: center;
+}
+.two-five {
+  top: 2.66em;
+}
+.infinite {
+  top: 5.32em;
+}
+figure:hover .box {
+  -webkit-animation-name: moveit;
+  -moz-animation-name: moveit;
+  -ms-animation-name: moveit;
+  -o-animation-name: moveit;
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -ms-animation-duration: 1.5s;
+  -o-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+}
+figure:hover .two-five {
+  -webkit-animation-iteration-count: 2.5;
+  -moz-animation-iteration-count: 2.5;
+  -ms-animation-iteration-count: 2.5;
+  -o-animation-iteration-count: 2.5;
+}
+figure:hover .infinite {
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+}
+@-webkit-keyframes moveit {
+  to {
+    left: 100%;
+  }
+}
+@-moz-keyframes moveit {
+  to {
+    left: 100%;
+  }
+}
+@-ms-keyframes moveit {
+  to {
+    left: 100%;
+  }
+}
+@-o-keyframes moveit {
+  to {
+    left: 100%;
+  }
+}

@@ -1,0 +1,141 @@
+body {
+  width: 80%;
+  max-width: 42em;
+  margin: auto;
+  font: bold 21px Georgia, serif;
+}
+h1 {
+  font-weight: normal;
+}
+pre {
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+figure div,
+figure span {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+figcaption {
+  clear: left;
+  padding-top: 1.5em;
+}
+#skew1 div {
+  float: left;
+  width: 121px;
+  height: 121px;
+  margin-right: 5%;
+  border: 3px solid #000;
+  border-radius: .5em;
+  text-align: center;
+  background: #fff;
+}
+#skew1 .four {
+  margin-right: 0;
+}
+#skew1 span {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  border: 3px solid #555;
+  border-radius: .5em;
+  background: #ddd;
+  -moz-opacity: .8;
+  opacity: .8;
+}
+#skew1 .one {
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+  -ms-transform: skew(30deg);
+  -o-transform: skew(30deg);
+  transform: skew(30deg);
+}
+#skew1 .one span {
+  -webkit-transform: skew(-30deg);
+  -moz-transform: skew(-30deg);
+  -ms-transform: skew(-30deg);
+  -o-transform: skew(-30deg);
+  transform: skew(-30deg);
+}
+#skew1 .two {
+  -webkit-transform: skew(0, 30deg);
+  -moz-transform: skew(0, 30deg);
+  -ms-transform: skew(0, 30deg);
+  -o-transform: skew(0, 30deg);
+  transform: skew(0, 30deg);
+}
+#skew1 .two span {
+  -webkit-transform: skew(0, -30deg);
+  -moz-transform: skew(0, -30deg);
+  -ms-transform: skew(0, -30deg);
+  -o-transform: skew(0, -30deg);
+  transform: skew(0, -30deg);
+}
+#skew1 .three {
+  -webkit-transform: skew(20deg, 20deg);
+  -moz-transform: skew(20deg, 20deg);
+  -ms-transform: skew(20deg, 20deg);
+  -o-transform: skew(20deg, 20deg);
+  transform: skew(20deg, 20deg);
+}
+#skew1 .three span {
+  -webkit-transform: skew(-20deg, -20deg);
+  -moz-transform: skew(-20deg, -20deg);
+  -ms-transform: skew(-20deg, -20deg);
+  -o-transform: skew(-20deg, -20deg);
+  transform: skew(-20deg, -20deg);
+}
+#skew1 .four {
+  -webkit-transform: skewX(180deg);
+  -moz-transform: skewX(180deg);
+  -ms-transform: skewX(180deg);
+  -o-transform: skewX(180deg);
+  transform: skewX(180deg);
+}
+#skew1 .four span {
+  -webkit-transform: skewY(-180deg);
+  -moz-transform: skewY(-180deg);
+  -ms-transform: skewY(-180deg);
+  -o-transform: skewY(-180deg);
+  transform: skewY(-180deg);
+}
+#skew:hover .one,
+#skew:hover .one span,
+#skew:hover .two,
+#skew:hover .two span,
+#skew:hover .three,
+#skew:hover .three span,
+#skew:hover .four,
+#skew:hover .four span {
+  -webkit-transform: skew(0, 0);
+  -moz-transform: skew(0, 0);
+  -ms-transform: skew(0, 0);
+  -o-transform: skew(0, 0);
+  transform: skew(0, 0);
+}
+#skew:hover .four {
+  -webkit-transform: skewX(0);
+  -moz-transform: skewX(0);
+  -ms-transform: skewX(0);
+  -o-transform: skewX(0);
+  transform: skewX(0);
+}
+#skew:hover .four span {
+  -webkit-transform: skewY(0);
+  -moz-transform: skewY(0);
+  -ms-transform: skewY(0);
+  -o-transform: skewY(0);
+  transform: skewY(0);
+}
+#skew .four,
+#skew .four span {
+  border-color: #c11100;
+}

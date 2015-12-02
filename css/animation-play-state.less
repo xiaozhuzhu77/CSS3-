@@ -1,0 +1,99 @@
+body {
+    width: 80%;
+    max-width: 42em;
+    margin: auto;
+    font: bold 21px Georgia, serif;
+}
+h1 {
+    font-weight: normal;
+}
+hr,
+footer {
+    margin: 2.5em 0;
+}
+pre {
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+}
+pre,
+code,
+samp,
+var {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+figcaption {
+    clear: left;
+    margin-top: 84px;
+    padding-top: 1.5em;
+}
+
+figure {position: relative;}
+figure div {
+    position: absolute;
+    left: 0%;
+    width: 10em;
+    margin: 0 0 .5em;
+    border: 3px solid #000;
+    border-radius: .5em;
+    padding: .33em;
+    background: #fff;
+    text-align: center;
+}
+figure:hover div {
+    -webkit-animation-name: running;
+    -moz-animation-name: running;
+    -ms-animation-name: running;
+    -o-animation-name: running;
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    -ms-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+    -o-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    -ms-animation-direction: alternate;
+    -o-animation-direction: alternate;
+}
+figure div:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+}
+@-webkit-keyframes running {
+    to {
+        left: 100%;
+        margin-left: -10em;
+    }
+}
+@-moz-keyframes running {
+    to {
+        left: 100%;
+        margin-left: -10em;
+    }
+}
+@-ms-keyframes running {
+    to {
+        left: 100%;
+        margin-left: -10em;
+    }
+}
+@-o-keyframes running {
+    to {
+        left: 100%;
+        margin-left: -10em;
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>transform: scale</title>
+    <link href="css/scale.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>transform: scale</h1>
+
+<figure id="scale">
+<pre class="callout"><code>
+    :hover .one {transform: scale(.5);}  /* the same as scale(.5,.5) */
+
+    :hover .one span {transform: scale(-3);}
+
+
+    :hover .two {transform: scale(.75,1);} /* the same as scaleX(.75) */
+
+    :hover .two span {transform: scale(-3,-1.5);}
+</code></pre>
+    <div class="one">
+        <span>↖</span>
+    </div>
+    <div class="two">
+        <span>↖</span>
+    </div>
+</figure>
+</body>
+</html>

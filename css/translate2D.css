@@ -1,0 +1,60 @@
+body {
+  width: 80%;
+  max-width: 42em;
+  margin: auto;
+  font: bold 21px Georgia, serif;
+}
+h1 {
+  font-weight: normal;
+}
+pre {
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+figure div,
+figure span {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+figure div {
+  width: 25%;
+  height: 100px;
+  border: 3px solid #000;
+  border-radius: .5em;
+  background: #fff;
+}
+figure span {
+  display: inline-block;
+  width: 50%;
+  height: 50px;
+  border: 3px solid #555;
+  border-radius: .5em;
+  background: #ddd;
+  -webkit-transform: translate(-3px, 47px);
+  -moz-transform: translate(-3px, 47px);
+  -ms-transform: translate(-3px, 47px);
+  -o-transform: translate(-3px, 47px);
+  transform: translate(-3px, 47px);
+}
+figure:hover div {
+  -webkit-transform: translate(280%);
+  -moz-transform: translate(280%);
+  -ms-transform: translate(280%);
+  -o-transform: translate(280%);
+  transform: translate(280%);
+}
+figure:hover span {
+  -webkit-transform: translate(90%, -3px);
+  -moz-transform: translate(90%, -3px);
+  -ms-transform: translate(90%, -3px);
+  -o-transform: translate(90%, -3px);
+  transform: translate(90%, -3px);
+}

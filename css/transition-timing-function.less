@@ -1,0 +1,93 @@
+@import "common";
+figure {
+    position: relative;
+    width: 100%;
+}
+figure div div {
+    width: 20%;
+    margin: 0 0 .5em;
+    border: 3px solid #000;
+    border-radius: .5em;
+    padding: .33em;
+    background: #fff;
+    text-align: center;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 2s;
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+}
+figure:hover div div {
+    -webkit-transform: translate(340%,0);
+    -moz-transform: translate(340%,0);
+    -ms-transform: translate(340%,0);
+    -o-transform: translate(340%,0);
+    transform: translate(340%,0);
+}
+figure .linear {
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+figure .ease {
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -ms-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+figure .ease-in {
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-timing-function: ease-in;
+    -ms-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
+figure .ease-out {
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+figure .ease-in-out {
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -ms-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+figure .steps {
+    -webkit-transition-timing-function: steps(3);
+    -moz-transition-timing-function: steps(3);
+    -ms-transition-timing-function: steps(3);
+    -o-transition-timing-function: steps(3);
+    transition-timing-function: steps(3);
+}
+figure .steps-start {
+    -webkit-transition-timing-function: steps(3,start);
+    -moz-transition-timing-function: steps(3,start);
+    -ms-transition-timing-function: steps(3,start);
+    -o-transition-timing-function: steps(3,start);
+    transition-timing-function: steps(3,start);
+}
+figure .step-start {
+    margin-top: 25px;
+    -webkit-transition-timing-function: step-start;
+    -moz-transition-timing-function: step-start;
+    -ms-transition-timing-function: step-start;
+    -o-transition-timing-function: step-start;
+    transition-timing-function: step-start;
+}
+figure .step-end {
+    -webkit-transition-timing-function: step-end;
+    -moz-transition-timing-function: step-end;
+    -ms-transition-timing-function: step-end;
+    -o-transition-timing-function: step-end;
+    transition-timing-function: step-end;
+}
